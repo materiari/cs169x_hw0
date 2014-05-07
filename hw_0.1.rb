@@ -12,5 +12,7 @@ end
 
 # Predicate for any two elements adding up to the given value
 def sum_to_n?(int_array, n)
+    return false unless int_array.respond_to?(:combination)
+    
   int_array.uniq.combination(2).detect {|arr| sum(arr) == n }
 end
